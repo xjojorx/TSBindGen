@@ -4,7 +4,7 @@ Reflection-based generation of typescript definitions from C# types.
 
 ## Description
 
-This is a typescript generator in order to ease the usage of your already defined C# types on a TypeScript client. It is reflection based in order to be both configurable from within the code, and to be able to resolve dependent types.
+This is a typescript types generator in order to ease the usage of your already defined C# types on a TypeScript client. It is reflection based in order to be both configurable from within the code, and to be able to resolve dependent types. When you provide a list of types, the function will generate the requested types, along with any other types that are needed for it's representation, converging on a complete type definition graph that spawns from the requested list.
 
 The library is composed of a single static class, at any point of an application, call into `TSGenerator.GenerateTypes` to generate the resulting type declarations. The function allows for passing either a list of types or an `Assembly` plus a list of namespaces, that way you can select what types to generate and which ones to ignore however it is more convenient for each codebase. It is possible to get a string in return or to provide a `TextWriter` as the last argument, which can be used to write directly to a file.
 
